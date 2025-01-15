@@ -113,3 +113,37 @@ console.log(obj); // Output: {name: "John", age: 30, isAdult: true}
 console.log(obj.name); // Output: John
 console.log(obj.age); // Output: 30
 console.log(obj.isAdult); // Output: true
+
+//Iterating over an array
+const arr2 = [1,2,3,4,5];
+for (let i=0; i<arr.length; i++){
+    console.log(arr[i]);
+}
+
+// Switch case calculator
+
+switch (sign) {
+    case "+":
+        console.log(a+b)
+    case "-":
+        console.log(a-b)
+    case "*":
+        console.log(a*b)
+    case "/" :
+        if (b!=0){
+            console.log(a/b)
+        }
+        else{
+            console.log("Division by zero is not allowed")
+        }
+    case "%":
+        if (b!=0){
+            console.log(a%b)
+        }
+        else{
+            console.log("Division by zero is not allowed")
+        }
+      
+        default:
+            console.log("Invalid operator");
+    }
