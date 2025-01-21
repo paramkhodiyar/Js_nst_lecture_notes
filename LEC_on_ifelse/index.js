@@ -75,6 +75,12 @@ console.log(iseligibletodrive); // Output: You can drive
 // Syntex of for loop is for(initialization; condition; increment/decrement){}
 // Syntex of while loop is while(condition){}
 
+let b = 10;
+while (b!=0){
+    console.log(b);
+    b--;
+}
+
 for (const i=0; i<5; i++){
     console.log(i);
 } // Code wont run as i is constant and we cannot change the value of constant variable.
@@ -85,13 +91,23 @@ for (const i=0; i<5; i++){
         break;
     }
 } // Code will run only once as we have used break statement. Wont give any error.
-for (let i=0; i<5; i++){
+for (let i=0; i<6; i++){
     console.log(i);
-} // Output: 0 1 2 3 4
+} // Output: 0 1 2 3 4 5
 
 for (let i=0;i++,i<5;){
     console.log(i);
 } // Output: 1 2 3 4 5
+
+let param = str([1,2,3,4,5]); // str here is a function which converts the array into string. 
+console.log(param); // Output: 1,2,3,4,5
+for (let i=0; i<param.length; i++){
+    console.log(param[i]);
+} // Output: 1 2 3 4 5
+
+let k = Infinity;
+k = -Infinity;
+console.log(typeof k); // Output: number
 
 // Note the difference between the above two codes, in the first code the value of i is printed first and then incremented but in the second code the value of i is incremented first and then printed.
 
@@ -147,3 +163,9 @@ switch (sign) {
         default:
             console.log("Invalid operator");
     }
+
+
+// for loop whose step value is 2
+for (let i=0; i<5; i+=2){
+    console.log(i);
+} // Output: 0 2 4
