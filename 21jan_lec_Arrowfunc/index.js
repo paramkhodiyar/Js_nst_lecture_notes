@@ -120,8 +120,60 @@ function modify() {
 modify();
 //output :
 
+const callme = () =>{
+    console.log("This is a callback function");
+}
+const data = callme();
+console.log(data); // undefined
 
 
+const modifyArray = function() {
+    const modifiedArr = [...arr1];
+
+    if (modifiedArr[3] === 40) {
+        modifiedArr[3] = 99;
+    } else if (modifiedArr[3] === 50) {
+        modifiedArr[3] = 10;
+    } else {
+        modifiedArr[3] = 20;
+    }
+
+    console.log("arr", arr1);
+    console.log("modifiedArr", modifiedArr);
+};
+
+const arr1 = [10, 20, 30, 40, 50];
+modifyArray(arr1);
 
 
+const check = (param)=>{
+    if (param%2===0){
+        return Even;
+    } else {
+        return Odd;
+    }
+}
+const iseven = check(10);
+console.log(iseven) 
 
+const add = (a,b) => {
+    let ans = a+b;
+    if (ans>100){
+        return "Great"; 
+    } else {
+        return "Small"
+    }
+}
+const resu = add(10,20);
+console.log(resu)
+
+
+const greet = (message,callback)=>{
+    const b = "hello"+ message;
+    callback(b); // this is important to note that the callback function is called here. which is passed as an argument to the greet function. 
+
+}
+const printa = (a)=>{
+    console.log(a);
+}
+greet("world",printa); // hello world
