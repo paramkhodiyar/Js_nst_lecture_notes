@@ -177,3 +177,58 @@ const printa = (a)=>{
     console.log(a);
 }
 greet("world",printa); // hello world
+
+let a = [1,23,4,5]
+console.log(typeof(a)) 
+
+function flattenArray(arr) {
+    let ans = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== 'object') {
+            ans.push(arr[i])
+        } else {
+            for (let j = 0; j < arr[i].length; j++) {
+                ans.push(arr[i][j])
+            }
+        }
+    }
+    return ans
+}
+
+
+function arrayOperations(numbers, names, targetName, targetNumber) {
+    let even = null;
+    let index = -1;
+    let ispresent = false;
+  
+    for (let i=0;i<numbers.length;i++){
+      if (numbers[i]%2===0){
+        even = numbers[i]
+  
+      }
+      if (numbers[i]===targetNumber){
+        ispresent = true
+      }
+    }
+    for (let j=0;j<names.length;j++){
+      if (names[j]===targetName){
+        index = j;
+      }
+    }
+    let ans = 0;
+    if (even!== null){
+      ans+=even
+    } else {
+      ans+=0
+    }
+    ans+=index
+    if (ispresent){
+      ans+=1
+    } else{
+      ans+=0
+    }
+    
+    
+    return ans
+  }
