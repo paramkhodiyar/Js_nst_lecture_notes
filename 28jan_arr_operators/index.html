@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array operators Lecture</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffd500;
+            height: 100vh; 
+        }
+        .container h1 .js {
+            color: rgb(255, 5, 5);
+        }
+        .car {
+            width: 50px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: moveCar 10s linear infinite;
+        }
+        .wheel {
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .wheel.front {
+            top: 25px;
+            left: 5px;
+        }
+        .wheel.back {
+            top: 25px;
+            left: 35px;
+        }
+        @keyframes moveCar {
+            0% { top: 0; left: 0; }
+            25% { top: 0; left: calc(100% - 50px); }
+            50% { top: calc(100% - 30px); left: calc(100% - 50px); }
+            75% { top: calc(100% - 30px); left: 0; }
+            100% { top: 0; left: 0; }
+        }
+        .container .image img {
+            border-radius: 8px;
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Array operations on arr in <span class="js">JS</span>, iteration methods</h1>
+        <div class="image">
+            <img src="name.png" alt="Array operations image">
+        </div> 
+    </div>
+
+    <div class="car">
+        <div class="wheel front"></div>
+        <div class="wheel back"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
