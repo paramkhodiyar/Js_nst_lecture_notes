@@ -44,3 +44,31 @@ def subsets(nums):
     return result
 nums = [1,2]
 print(subsets(nums))
+l = [0,1,0,3,12]
+c = l.count(0)
+ans = []
+for i in l:
+    if i != 0:
+        ans.append(i)
+ans.extend([0] * c)
+print(ans)
+
+n = int(input())
+l = list(map(int, input().split()))
+pref = [0] * n
+pref[0] = l[0]
+
+for i in range(1, n):
+    pref[i] = pref[i - 1] + l[i]
+q = int(input())
+for i in range(q):
+    l, r = map(int, input().split())
+    if l != 0:
+        ans = pref[r] - pref[l - 1]
+        print(ans)
+    else:
+        ans = pref[r]
+        print(ans)
+
+
+
