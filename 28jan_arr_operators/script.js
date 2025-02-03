@@ -60,6 +60,7 @@
     let fahrenheitTemps = celsiusTemps.map(celsiusToFahrenheit);
     console.log("Temperatures in Fahrenheit: ", fahrenheitTemps);
 
+
 // 3. filter
     // It is used to filter out the elements of the array based on the condition
     // Syntax
