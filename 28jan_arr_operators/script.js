@@ -18,7 +18,7 @@
             console.log("Odd number is : ",ele);
         }
     }
-    arr1.forEach(printeven); //
+    arr1.forEach(printeven);
     
     
 
@@ -89,4 +89,10 @@
         }
     const data = arrayparam.reduce(sum1,0);
     console.log("The sum of the array is : ",data); // 15
+
+    let ar2 = [1,2,3,4,5];
+    let indextoremove = 2;
+    
+    
+    
     
