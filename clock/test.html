@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Display</title>
+    <title>Online clock</title>
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -17,26 +18,69 @@
         }
         #time {
             text-align: center;
+            color: black;
+            animation: fadeIn 2s ease-in-out;
         }
-        .navbar {
+        #date {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container {
             display: flex;
-            justify-content: space-between;
-            background-color: black;
+            flex-direction: column;
+            background-color: rgb(232, 160, 26);
+            padding: 40px;
+            border-radius: 8px;
+            align-items: center;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.3em;
             color: white;
-            padding: 10px;
-            color: white;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 2em;
+            }
+            .container {
+                padding: 10px;
+            }
+            footer {
+                font-size: 0.5em;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                font-size: 1.5em;
+            }
+            .container {
+                padding: 5px;
+            }
+            footer {
+                font-size: 0.7em;
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <h1>Live clock (IST)</h1><br>
+    <div class="container">
+        <div id="time"></div>
+        <span id="date"></span>
     </div>
-    <div id="time"></div>
+    <footer>
+        &copy; Made by Param Khodiyar
+    </footer>
     <script src="test.js"></script>
 </body>
 </html>

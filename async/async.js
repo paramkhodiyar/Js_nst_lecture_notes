@@ -172,3 +172,78 @@ return function createThrottle(fn, delay) {
     }
   };
 };
+
+
+function authenticateUser(username, password, users) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (users[username] && users[username] === password) {
+        resolve(`Login successful for user: ${username}`);
+      } else {
+        reject("Authentication failed. Invalid username or password.");
+      }
+    }, 3000);
+  });
+}
+
+const users = {
+  "admin": "password",
+  "user1": "password1",
+  "user2": "password2",
+  "user3": "password3",
+  "user4": "password4",
+};
+
+// Example usage:
+authenticateUser("user1", "password1", users)
+  .then(message => console.log(message))
+  .catch(error => console.log(error));
+
+
+
+  Promise.myAllSettled = function(promises) {
+    return new Promise((resolve) => {
+      let results = [];
+      let completed = 0;
+
+      promises.forEach((promise, index) => {
+        Promise.resolve(promise)
+          .then(value => {
+            results[index] = { status: "fulfilled", value: value };
+          })
+          .catch(reason => {
+            results[index] = { status: "rejected", reason: reason };
+          })
+          .finally(() => {
+            completed++;
+            if (completed === promises.length) {
+              resolve(results);
+            }
+          });
+      });
+    });
+  };
+
+  // Example usage:
+  const promise1 = Promise.resolve(42);
+  const promise2 = Promise.reject("Error occurred");
+  const promise3 = new Promise((resolve) => setTimeout(resolve, 1000, "Hello"));
+
+  Promise.myAllSettled([promise1, promise2, promise3])
+    .then(results => console.log(results));
+
+
+
+    Promise.myRace = function (arr) {
+      return new Promise((resolve) => {
+        for (let i = 0; i < arr.length; i++) {
+          Promise.resolve(arr[i])
+            .then((value) => {
+              resolve(value);
+            })
+            .catch((error) => {
+              resolve(error);
+            });
+        }
+      });
+    };

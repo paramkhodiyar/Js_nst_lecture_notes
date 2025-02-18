@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in JS </title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            height: 100vh;
+            background-color: rgb(145, 237, 171);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .typing {
+            border-right: .1em solid black;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="typing-text"></h1>
+    </div>
+    <script src="promises.js"></script>
+</body>
+</html>
